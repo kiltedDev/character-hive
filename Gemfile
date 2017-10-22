@@ -10,6 +10,7 @@ gem 'dotenv-rails'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'omniauth-google-oauth2'
+gem 'react_on_rails'
 
 group :development do
   gem 'listen', '~> 3.0.5'
