@@ -16,8 +16,6 @@ feature 'sign up', %(
     fill_in 'user_password', with: 'password'
     fill_in 'Password Confirmation', with: 'password'
 
-    save_and_open_page
-
     click_button 'Sign Up'
 
     expect(page).to have_content("Welcome to the Hive!")
