@@ -9,7 +9,6 @@ gem 'jquery-rails'
 gem 'dotenv-rails'
 gem 'bootstrap-sass'
 gem 'devise'
-gem 'devise-bootstrapped'
 
 group :development do
   gem 'listen', '~> 3.0.5'
