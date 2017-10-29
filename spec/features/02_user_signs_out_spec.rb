@@ -6,7 +6,7 @@ feature 'user signs out', %Q{
 } do
 
   scenario 'an existing user specifies a valid email and password' do
-    greg = FactoryGirl.create(:user)
+    greg = FactoryBot.create(:user)
     login_as(greg, :scope => :user)
 
     visit root_path
