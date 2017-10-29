@@ -12,7 +12,7 @@ gem 'devise'
 gem 'omniauth-google-oauth2'
 gem 'webpacker', '~> 3.0'
 gem 'foreman'
-gem 'react_on_rails'
+gem 'react_on_rails', '~> 9.0.1'
 
 group :development do
   gem 'listen', '~> 3.0.5'
