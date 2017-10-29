@@ -1,4 +1,4 @@
-# You can run these commands in separate shells instead of using foreman
+
 web: rails s -p 3000
 
 # Next line runs the webpack-dev-server
