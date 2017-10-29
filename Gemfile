@@ -10,9 +10,6 @@ gem 'dotenv-rails'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'omniauth-google-oauth2'
-gem 'webpacker', '~> 3.0'
-gem 'foreman'
-gem 'react_on_rails'
 
 group :development do
   gem 'listen', '~> 3.0.5'
@@ -30,8 +27,6 @@ group :development, :test do
   gem 'shoulda'
   gem 'valid_attribute'
   gem 'coveralls'
-  gem 'database_cleaner'
-  gem 'poltergeist'
 end
 
 group :production do
@@ -39,5 +34,3 @@ group :production do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem 'mini_racer', platforms: :ruby
