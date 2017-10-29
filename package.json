@@ -1,9 +1,11 @@
 {
   "dependencies": {
-    "react-on-rails": "^10.0.1"
+    "react-on-rails": "^9.0.1"
   },
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/twilson-spqr/character-hive"
-  }
+  },
+  "license": "ISC"
 }
