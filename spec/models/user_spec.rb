@@ -9,7 +9,7 @@ RSpec.describe User, type: :model do
     it { should_not have_valid(:email).when(nil, '', 'urser', 'usersr@com', 'usersba.com') }
 
     it 'has requires a unique username' do
-      original = FactoryGirl.create(:user)
+      original = FactoryBot.create(:user)
       user = User.new
       user.username = original.username
       user.password = 'password'

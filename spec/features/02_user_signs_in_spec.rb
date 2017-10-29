@@ -7,7 +7,7 @@ feature 'sign in', %(
 ) do
 
   scenario 'user successfully signs in' do
-    user = FactoryGirl.create(:user)
+    user = FactoryBot.create(:user)
     visit root_path
     click_link 'Sign In'
 
@@ -34,7 +34,7 @@ feature 'sign in', %(
   end
 
   scenario 'an existing user with the wrong password tries to sign in' do
-    user = FactoryGirl.create(:user)
+    user = FactoryBot.create(:user)
     visit new_user_session_path
 
     fill_in 'user[email]', with: user.email
@@ -47,7 +47,7 @@ feature 'sign in', %(
   end
 
   scenario 'A user cannot sign in when already in' do
-    user = FactoryGirl.create(:user)
+    user = FactoryBot.create(:user)
     visit new_user_session_path
 
     fill_in 'user[email]', with: user.email
