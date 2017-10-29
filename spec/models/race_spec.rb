@@ -11,11 +11,6 @@ RSpec.describe Race, type: :model do
     it { should_not have_valid(:vision).when(nil, "") }
   end
 
-  context "#wild" do
-    it { should have_valid(:wild).when(true, false) }
-    it { should_not have_valid(:wild).when(nil, "", "true") }
-  end
-
   context "#racial mods" do
     it { should have_valid(:strength).when(4, 2, 0, -4) }
     it { should_not have_valid(:strength).when(nil, 5, 3, -5) }
