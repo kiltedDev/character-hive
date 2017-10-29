@@ -1,7 +1,0 @@
-{
-  "name": "character-hive",
-  "private": true,
-  "dependencies": {
-    "react-on-rails": "^10.0.0"
-  }
-}
