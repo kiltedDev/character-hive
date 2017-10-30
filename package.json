@@ -10,5 +10,7 @@
   },
   "devDependencies": {
     "webpack-dev-server": "^2.9.3"
-  }
+  },
+  "license": "ISC",
+  "scripts": { "postinstall": "cd client && npm install" }
 }
