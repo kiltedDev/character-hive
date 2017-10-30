@@ -13,5 +13,7 @@ class CreateRaces < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+
+    add_index :races, :name, unique: true
   end
 end

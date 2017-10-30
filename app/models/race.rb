@@ -1,5 +1,6 @@
 class Race < ApplicationRecord
   validates_presence_of :name
+  validates_uniqueness_of :name
   validates_presence_of :vision
   validates_inclusion_of :strength,     in: [-4, -2, 0, 2, 4]
   validates_inclusion_of :constitution, in: [-4, -2, 0, 2, 4]

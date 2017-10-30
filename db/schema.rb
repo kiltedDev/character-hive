@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20171029164236) do
     t.integer "charisma", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_races_on_name", unique: true
   end
 
   create_table "stat_values", force: :cascade do |t|
