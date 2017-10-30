@@ -22,3 +22,16 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+To get to work on this at home, you'll have to set up a .env file on your machine and add two lines:
+GOOGLE_ID=asdfklajsdfkajsdflkj
+and
+GOOGLE_SECRET=asdfklajsdfkajsdflkj
+
+This site will walk you through how to obtain those two keys.
+https://richonrails.com/articles/google-authentication-in-ruby-on-rails/
+
+You'll be substituting "asdfklajsdfkajsdflkj" with your ID and SECRET_KEY.
+
+From there you should be able to run this on your local machine by entering
+ "$ foreman start -f Procfile.dev" in your console.

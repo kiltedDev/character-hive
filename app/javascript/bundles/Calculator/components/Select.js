@@ -8,7 +8,7 @@ const Select = props => {
   })
 
   return (
-    <label className={props.className||"col-sm-3"}>{props.label}
+    <label className={props.className}>{props.label}
       <select
         name={props.name} value={props.selectedOption}  onChange={props.handlerFunction}
       >
