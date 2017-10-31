@@ -1,11 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe CharacterClass, type: :model do
+  before(:example) do
+    @new_class = CharacterClass.create(name: "Zoomer", hit_die: 8, bab: "Mid", base_skills: 6, caster: false)
+  end
   context "#name" do
     it { should have_valid(:name).when("Fighter", "Mage", "Thief") }
     it { should_not have_valid(:name).when(nil, "") }
 
-    new_class = FactoryBot.create(:character_class)
     it {should validate_uniqueness_of(:name) }
   end
 
