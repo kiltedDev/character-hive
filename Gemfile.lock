@@ -66,7 +66,7 @@ GEM
       thor (~> 0.19.4)
       tins (~> 1.6)
     crass (1.0.2)
-    database_cleaner (1.6.1)
+    database_cleaner (1.6.2)
     devise (4.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -149,6 +149,7 @@ GEM
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
     pg (0.21.0)
+    phantomjs (2.1.1.0)
     poltergeist (1.16.0)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
@@ -301,6 +302,7 @@ DEPENDENCIES
   mini_racer
   omniauth-google-oauth2
   pg (~> 0.18)
+  phantomjs
   poltergeist
   pry-rails
   puma (~> 3.7)
