@@ -1,4 +1,6 @@
 class Race < ApplicationRecord
+  has_many :characters
+
   validates_presence_of :name
   validates_uniqueness_of :name
   validates_presence_of :vision

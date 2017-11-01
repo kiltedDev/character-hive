@@ -16,7 +16,6 @@ RSpec.describe User, type: :model do
   end
 
   context "#associations" do
-    # it { should have_many : }
-    # it { should have_many : }
+    it { should have_many :characters }
   end
 end
