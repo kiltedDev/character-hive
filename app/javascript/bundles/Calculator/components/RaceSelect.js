@@ -40,7 +40,7 @@ debugger
     }
 
     return (
-      <table className="race-select">
+      <table className="col-sm-12 col-md-6 race-select">
         <thead>
           <tr>
             <th>Ability</th>
