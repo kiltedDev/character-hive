@@ -99,7 +99,8 @@ export default class PBCalc extends React.Component {
           raceStats={this.props.raceStats}
           selectedStat={this.state.selectedStat}
         />
-        <table>
+        <br/>
+        <table className="col-sm-12 col-md-6 table-bordered">
           <thead>
           <tr>
             <th>Ability</th>
