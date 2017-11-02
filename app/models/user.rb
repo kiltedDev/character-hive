@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  has_many :characters
+
   validates :username, presence: true, uniqueness: true, length: {minimum: 6, maximum: 24}, format: { with: /^[a-zA-Z0-9'_.-]+$/, multiline: true }
   validates :email, presence: true, format: { with: /\A^([^@\s]+)@((?:[-a-z0-9]+.)+[a-z]{2,})$\z/i, multiline: true }
 
