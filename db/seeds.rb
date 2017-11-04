@@ -117,3 +117,106 @@ stats = StatValue.create(
       value: 17
     }
   ])
+
+user = User.create(email: "thebob@bob.com", username: "thebob", password: "password")
+
+character_classes = CharacterClass.create(
+  [
+    {
+      name: "Barbarian",
+      hit_die: 12,
+      bab: "Full",
+      base_skills: 4,
+      caster: false
+    },
+
+    {
+      name: "Bard",
+      hit_die: 8,
+      bab: "Mid",
+      base_skills: 6,
+      caster: true
+    },
+
+    {
+      name: "Cleric",
+      hit_die: 6,
+      bab: "Half",
+      base_skills: 2,
+      caster: true
+    },
+
+    {
+      name: "Druid",
+      hit_die: 8,
+      bab: "Mid",
+      base_skills: 4,
+      caster: true
+    },
+
+    {
+      name: "Fighter",
+      hit_die: 10,
+      bab: "Full",
+      base_skills: 2,
+      caster: false
+    },
+
+    {
+      name: "Monk",
+      hit_die: 10,
+      bab: "Full",
+      base_skills: 4,
+      caster: false
+    },
+
+    {
+      name: "Paladin",
+      hit_die: 10,
+      bab: "Full",
+      base_skills: 2,
+      caster: true
+    },
+
+    {
+      name: "Ranger",
+      hit_die: 10,
+      bab: "Full",
+      base_skills: 4,
+      caster: true
+    },
+
+    {
+      name: "Rogue",
+      hit_die: 8,
+      bab: "Mid",
+      base_skills: 8,
+      caster: false
+    },
+
+    {
+      name: "Sorcerer",
+      hit_die: 8,
+      bab: "Half",
+      base_skills: 2,
+      caster: true
+    },
+
+    {
+      name: "Wizard",
+      hit_die: 6,
+      bab: "Half",
+      base_skills: 2,
+      caster: true
+    },
+
+  ]
+)
+
+birgir = Character.create(
+  name: "Birgir",
+  character_class: "Paladin",
+  race_id: 8,
+  level: 2,
+  user_id: 1
+)

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'character/index'
+
+  get 'character/show'
+
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   get 'static_pages/home'
