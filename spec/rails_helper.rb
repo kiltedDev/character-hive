@@ -68,6 +68,14 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
+  config.before(:each) do
+    greg = FactoryBot.create(:user)
+    human = FactoryBot.create(:race)
+    paladin = FactoryBot.create(:character_class)
+    birgir = Character.create(name: "Birgir the Slow", user_id: greg.id, race_id: human.id, character_class: paladin.name, level: 2)
+
+  end
+
   include Warden::Test::Helpers
 
   # RSpec Rails can automatically mix in different behaviours to your tests
