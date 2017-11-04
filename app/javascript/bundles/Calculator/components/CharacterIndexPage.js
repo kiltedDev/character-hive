@@ -7,12 +7,10 @@ class CharacterIndexPage extends Component {
       return (
         <tr>
           <td><a href={"/characters/"+character.id}>{character.name}</a></td>
-          <td>{character.race} {character.character_class} {character.level}</td>
+          <td>{character.race_name} {character.character_class} {character.level}</td>
         </tr>
       )
     })
-
-debugger;
 
   return (
     <div className="CharacterIndexPage">

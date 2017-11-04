@@ -9,13 +9,13 @@ feature 'user visits character index', %Q{
     greg = FactoryBot.create(:user)
     human = FactoryBot.create(:race)
     paladin = FactoryBot.create(:character_class)
-    birgir = Character.create(name: "Birgir the Slow", user_id: greg.id, race_id: human.id, character_class: paladin.name, level: 2)
+    birgir = Character.create(name: "Birgir the Slow", user_id: greg.id, race_id: human.id, race_name: human.name, character_class: paladin.name, level: 2)
     login_as(greg, :scope => :user)
 
     visit root_path
     click_link 'Characters'
 
     expect(page).to have_content('Birgir the Slow')
-    expect(page).to have_content("#{birgir.race} #{birgir.class} 2")
+    expect(page).to have_content("#{birgir.race_name} #{birgir.class} 2")
   end
 end

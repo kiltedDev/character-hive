@@ -5,6 +5,9 @@ require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
+require "capybara/rails"
+require "valid_attribute"
+require 'capybara/poltergeist'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -30,6 +33,10 @@ RSpec.configure do |config|
   # Ensure that if we are running js tests, we are using latest webpack assets
   # This will use the defaults of :js and :server_rendering meta tags
   ReactOnRails::TestHelper.configure_rspec_to_compile_assets(config)
+
+
+  config.include Capybara::DSL
+  config.include Warden::Test::Helpers
 
   config.after :each do
     Warden.test_reset!
@@ -73,7 +80,6 @@ RSpec.configure do |config|
     human = FactoryBot.create(:race)
     paladin = FactoryBot.create(:character_class)
     birgir = Character.create(name: "Birgir the Slow", user_id: greg.id, race_id: human.id, character_class: paladin.name, level: 2)
-
   end
 
   include Warden::Test::Helpers
