@@ -22,7 +22,9 @@ end
 
 group :development, :test do
   gem 'faker'
-  gem 'capybara'
+  gem "capybara"
+  gem "capybara-screenshot"
+  gem "rspec-retry"
   gem 'factory_bot_rails'
   gem 'launchy', require: false
   gem 'pry-rails'
