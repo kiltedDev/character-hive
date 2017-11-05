@@ -16,6 +16,6 @@ feature 'user visits character index', %Q{
     click_link 'Characters'
 
     expect(page).to have_content('Birgir the Slow')
-    expect(page).to have_content("#{birgir.race_name} #{birgir.class} 2")
+    expect(page).to have_content("#{birgir.race_name} #{birgir.character_class} 2")
   end
 end
