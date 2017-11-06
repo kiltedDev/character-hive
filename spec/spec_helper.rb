@@ -1,5 +1,7 @@
 require 'database_cleaner'
 require 'capybara/poltergeist'
+require 'coveralls'
+Coveralls.wear!
 
 Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app, {
