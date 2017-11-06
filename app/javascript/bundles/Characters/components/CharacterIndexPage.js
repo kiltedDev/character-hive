@@ -1,33 +1,22 @@
 import React, {Component} from 'react';
+import ListOfCharacters from './ListOfCharacters';
 
 class CharacterIndexPage extends Component {
   render() {
-
-    let listOfCharacters = this.props.characters.map(character => {
-      return (
-        <tr>
-          <td><a href={"/characters/"+character.id}>{character.name}</a></td>
-          <td>{character.race_name} {character.character_class} {character.level}</td>
-        </tr>
-      )
-    })
-
-  return (
-    <div className="CharacterIndexPage">
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Details</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {listOfCharacters}
-        </tbody>
-      </table>
-    </div>
-  )
+    return (
+      <div className="CharacterIndexPage">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <ListOfCharacters
+          characters={this.props.characters}/>
+        </table>
+      </div>
+    )
   }
 }
 export default CharacterIndexPage;
