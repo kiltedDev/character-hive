@@ -29,17 +29,16 @@ export default class PBCalc extends React.Component {
     let eventName = event.target.name;
     let targetValue = parseInt(event.target.value)
     let newPointTotal = this.state.pointTotal;
-    newPointTotal -= this.state.stats[Even].value;
+    newPointTotal -= this.state.stats[eventName].value;
     newPointTotal += targetValue;
     let newStat = this.props.statValues.find((stat) =>
       (stat.value === targetValue)
     );
-    let setStateOne = `stats.${name}.name`
-    let setStateTwo = `stats.${name}.value`
+    let setStateText = [`stats.${eventName}.name: newStat.name`,
+    `stats.${eventName}.value: newStat.value`, `pointTotal: newPointTotal`]
+    debugger
     this.setState({
-      [setStateOne]: newStat.name,
-      [setStateTwo]: newStat.value,
-      pointTotal: newPointTotal
+      setStateText
     });
   }
 
