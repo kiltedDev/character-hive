@@ -8,12 +8,14 @@ export default class PBCalc extends React.Component {
     super(props);
       this.state = {
         errors: [],
-        strength: {name: 10, value: 0},
-        constitution: {name: 10, value: 0},
-        dexterity: {name: 10, value: 0},
-        intelligence: {name: 10, value: 0},
-        wisdom: {name: 10, value: 0},
-        charisma: {name: 10, value: 0},
+        stats: {
+          strength: {text: "Strength", name: 10, value: 0},
+          constitution: {text: "Constitution", name: 10, value: 0},
+          dexterity: {text: "Dexterity", name: 10, value: 0},
+          intelligence: {text: "Intelligence", name: 10, value: 0},
+          wisdom: {text: "Wisdom", name: 10, value: 0},
+          charisma: {text: "Charisma", name: 10, value: 0}
+        },
         selectedRace: this.props.raceStats[0],
         selectedStat: '',
         pointTotal: 0
@@ -24,33 +26,34 @@ export default class PBCalc extends React.Component {
   }
 
   handleInputChange(event) {
-    let name = event.target.name;
+    let eventName = event.target.name;
     let targetValue = parseInt(event.target.value)
     let newPointTotal = this.state.pointTotal;
-    newPointTotal -= this.state[name].value;
+    newPointTotal -= this.state.stats[Even].value;
     newPointTotal += targetValue;
     let newStat = this.props.statValues.find((stat) =>
       (stat.value === targetValue)
     );
+    let setStateOne = `stats.${name}.name`
+    let setStateTwo = `stats.${name}.value`
     this.setState({
-      [name]: newStat,
+      [setStateOne]: newStat.name,
+      [setStateTwo]: newStat.value,
       pointTotal: newPointTotal
     });
   }
 
   handleStatChange(event) {
     let selectedRace = this.state.selectedRace;
-    selectedRace.strength = 0;
-    selectedRace.constitution = 0;
-    selectedRace.dexterity = 0;
-    selectedRace.intelligence = 0;
-    selectedRace.wisdom = 0;
-    selectedRace.charisma = 0;
+    stats = Object.keys(this.state.stats)
+    stats.map((stat) => {
+      return(selectedRace[stat] = 0);
+    })
     selectedRace[event.target.value] = 2;
     this.setState({
       selectedRace: selectedRace,
       selectedStat: event.target.value.charAt(0).toUpperCase() + event.target.value.slice(1)
-    });
+    })
   }
 
   raceSelect(event) {
@@ -73,16 +76,15 @@ export default class PBCalc extends React.Component {
       errorDiv = <div className="callout alert">{errorItems}</div>
     }
 
-    let stats = ["Strength", "Constitution", "Dexterity", "Intelligence", "Wisdom", "Charisma"]
-
+    let stats=Object.keys(this.state.stats)
     let tableLines = stats.map((stat) => {
       return(
         <TableLine
         key={stat}
           name={stat}
-          attribute={this.state[stat.toLowerCase()]}
+          attribute={this.state.stats[stat]}
           handlerFunction={this.handleInputChange}
-          raceMod={this.state.selectedRace[stat.toLowerCase()]}
+          raceMod={this.state.selectedRace[stat]}
           statValues={this.props.statValues}
         />
       )
