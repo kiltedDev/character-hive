@@ -20,12 +20,12 @@ export default class PBCalc extends React.Component {
         selectedStat: '',
         pointTotal: 0
       }
-      this.handleInputChange = this.handleInputChange.bind(this);
       this.handleStatChange = this.handleStatChange.bind(this);
+      this.handleRaceChange = this.handleRaceChange.bind(this);
       this.raceSelect = this.raceSelect.bind(this);
   }
 
-  handleInputChange(event) {
+  handleStatChange(event) {
     let eventName = event.target.name;
     let targetValue = parseInt(event.target.value)
     let newPointTotal = this.state.pointTotal;
@@ -34,15 +34,16 @@ export default class PBCalc extends React.Component {
     let newStat = this.props.statValues.find((stat) =>
       (stat.value === targetValue)
     );
-    let setStateText = [`stats.${eventName}.name: newStat.name`,
-    `stats.${eventName}.value: newStat.value`, `pointTotal: newPointTotal`]
-    debugger
+    let stats = this.state.stats
+    stats[eventName].value = newStat.value
+    stats[eventName].name = newStat.name
     this.setState({
-      setStateText
+      stats,
+      pointTotal: newPointTotal
     });
   }
 
-  handleStatChange(event) {
+  handleRaceChange(event) {
     let selectedRace = this.state.selectedRace;
     stats = Object.keys(this.state.stats)
     stats.map((stat) => {
@@ -82,7 +83,7 @@ export default class PBCalc extends React.Component {
         key={stat}
           name={stat}
           attribute={this.state.stats[stat]}
-          handlerFunction={this.handleInputChange}
+          handlerFunction={this.handleStatChange}
           raceMod={this.state.selectedRace[stat]}
           statValues={this.props.statValues}
         />
@@ -96,7 +97,7 @@ export default class PBCalc extends React.Component {
         <RaceSelect
           selectedRace={this.state.selectedRace}
           raceSelect={this.raceSelect}
-          handleStatChange={this.handleStatChange}
+          handlerFunction={this.handleRaceChange}
           raceStats={this.props.raceStats}
           selectedStat={this.state.selectedStat}
         />
