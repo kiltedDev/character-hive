@@ -1,13 +1,9 @@
 import React from 'react';
 import TableLine from './TableLine';
+import TableHead from './TableHead';
+import TableFoot from './TableFoot';
 
 const TableBlock = (props) => {
-// needed props
-// stats={this.state.stats}
-// handleStatChange={this.handleStatChange}
-// selectedRace=this.state.selectedRace
-// statValues={this.props.statValues}
-// pointTotal={this.state.pointTotal}
 
   let stats=Object.keys(props.stats)
   let tableLines = stats.map((stat) => {
@@ -25,22 +21,9 @@ const TableBlock = (props) => {
 
   return (
     <table className="col-sm-12 col-md-6 table-bordered">
-      <thead>
-      <tr>
-        <th>Ability</th>
-        <th>Base</th>
-        <th>Racial</th>
-        <th>Total</th>
-      </tr>
-      </thead>
-      <tfoot>
-      <tr>
-        <td></td>
-        <td>Total:</td>
-        <td>{props.pointTotal}</td>
-        <td></td>
-      </tr>
-      </tfoot>
+      <TableHead/>
+      <TableFoot
+      pointTotal={props.pointTotal}/>
       <tbody>
         {tableLines}
       </tbody>

@@ -70,7 +70,7 @@ export default class PBCalc extends React.Component {
 
   render() {
     return (
-      <form>
+      <form className="Row">
       <h3>Calculate Stats</h3>
         <ErrorBlock
           errors={this.state.errors}
