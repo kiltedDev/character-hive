@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import ErrorBlock from './ErrorBlock';
 import TableLine from './TableLine';
+import TableBlock from './TableBlock';
 import RaceSelect from './RaceSelect';
 
 export default class PBCalc extends React.Component {
@@ -67,33 +69,12 @@ export default class PBCalc extends React.Component {
   }
 
   render() {
-    let errorDiv;
-    let errorItems;
-    if (Object.keys(this.state.errors).length > 0) {
-      errorItems = Object.values(this.state.errors).map(error => {
-        return(<li key={error}>{error}</li>)
-      })
-      errorDiv = <div className="callout alert">{errorItems}</div>
-    }
-
-    let stats=Object.keys(this.state.stats)
-    let tableLines = stats.map((stat) => {
-      return(
-        <TableLine
-        key={stat}
-          name={stat}
-          attribute={this.state.stats[stat]}
-          handlerFunction={this.handleStatChange}
-          raceMod={this.state.selectedRace[stat]}
-          statValues={this.props.statValues}
-        />
-      )
-    })
-
     return (
       <form>
       <h3>Calculate Stats</h3>
-        {errorDiv}
+        <ErrorBlock
+          errors={this.state.errors}
+        />
         <RaceSelect
           selectedRace={this.state.selectedRace}
           raceSelect={this.raceSelect}
@@ -102,27 +83,13 @@ export default class PBCalc extends React.Component {
           selectedStat={this.state.selectedStat}
         />
         <br/>
-        <table className="col-sm-12 col-md-6 table-bordered">
-          <thead>
-          <tr>
-            <th>Ability</th>
-            <th>Base</th>
-            <th>Racial</th>
-            <th>Total</th>
-          </tr>
-          </thead>
-          <tfoot>
-          <tr>
-            <td></td>
-            <td>Total:</td>
-            <td>{this.state.pointTotal}</td>
-            <td></td>
-          </tr>
-          </tfoot>
-          <tbody>
-            {tableLines}
-          </tbody>
-        </table>
+        <TableBlock
+          stats={this.state.stats}
+          handleStatChange={this.handleStatChange}
+          selectedRace={this.state.selectedRace}
+          statValues={this.props.statValues}
+          pointTotal={this.state.pointTotal}
+        />
       </form>
     );
   }
