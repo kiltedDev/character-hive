@@ -8,10 +8,8 @@ class RaceSelect extends React.Component {
     };
   }
 
-debugger
   render() {
-    let wildCardSlot;
-    let wildCardHead;
+    let wildCardSlot = <p> </p>;
 
     let stats = [
       {name: "Strength",
@@ -28,11 +26,10 @@ debugger
       value: "charisma"}]
 
     if (this.props.selectedRace.wild) {
-      wildCardHead = <th>Select Stat</th>
       wildCardSlot =
       <Select
         name='selectedStat'
-        handlerFunction={this.props.handleStatChange}
+        handlerFunction={this.props.handleRaceChange}
         options={stats}
         selectedOption={this.state.selectedStat}
         className="attribute"
@@ -43,8 +40,8 @@ debugger
       <table className="col-sm-12 col-md-6 race-select table-bordered">
         <thead>
           <tr>
+            <th>Race</th>
             <th>Ability</th>
-            {wildCardHead}
           </tr>
         </thead>
         <tbody>
