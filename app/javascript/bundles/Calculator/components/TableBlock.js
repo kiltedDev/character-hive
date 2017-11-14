@@ -5,12 +5,12 @@ import TableFoot from './TableFoot';
 
 const TableBlock = (props) => {
 
-  let stats=Object.keys(props.stats)
-  let tableLines = stats.map((stat) => {
+  let statKeys=Object.keys(props.stats)
+  let tableLines = statKeys.map((stat) => {
     return(
       <TableLine
       key={stat}
-        name={stat}
+        name={props.stats[stat].text}
         attribute={props.stats[stat]}
         handlerFunction={props.handleStatChange}
         raceMod={props.selectedRace[stat]}

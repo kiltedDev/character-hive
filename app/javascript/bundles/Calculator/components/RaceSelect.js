@@ -29,7 +29,7 @@ class RaceSelect extends React.Component {
       wildCardSlot =
       <Select
         name='selectedStat'
-        handlerFunction={this.props.handleStatChange}
+        handlerFunction={this.props.handleRaceChange}
         options={stats}
         selectedOption={this.state.selectedStat}
         className="attribute"

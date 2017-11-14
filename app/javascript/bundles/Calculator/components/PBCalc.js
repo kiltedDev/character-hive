@@ -47,7 +47,7 @@ export default class PBCalc extends React.Component {
 
   handleRaceChange(event) {
     let selectedRace = this.state.selectedRace;
-    stats = Object.keys(this.state.stats)
+    let stats = Object.keys(this.state.stats)
     stats.map((stat) => {
       return(selectedRace[stat] = 0);
     })
@@ -70,7 +70,7 @@ export default class PBCalc extends React.Component {
 
   render() {
     return (
-      <form className="Row">
+      <form>
       <h3>Calculate Stats</h3>
         <ErrorBlock
           errors={this.state.errors}
@@ -78,7 +78,7 @@ export default class PBCalc extends React.Component {
         <RaceSelect
           selectedRace={this.state.selectedRace}
           raceSelect={this.raceSelect}
-          handlerFunction={this.handleRaceChange}
+          handleRaceChange={this.handleRaceChange}
           raceStats={this.props.raceStats}
           selectedStat={this.state.selectedStat}
         />
