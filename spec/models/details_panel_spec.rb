@@ -12,6 +12,7 @@ RSpec.describe DetailsPanel, type: :model do
 
   context "#gender" do
     it { should have_valid(:gender).when("Male", "Female", "Non-Binary", "Fluid", "Other") }
+    it { should_not have_valid(:gender).when(12, "$ymbols", "Symb@ls", "Symbo!s", "12")}
   end
 
   context "#alignment" do

@@ -71,7 +71,7 @@
         1,
         null,
         1,
-        63,
+        64,
         null,
         null,
         null,
@@ -92,7 +92,7 @@
         null,
         null,
         1,
-        63,
+        64,
         null,
         null,
         1,
@@ -100,18 +100,18 @@
         null,
         null,
         1,
-        63,
+        64,
         null,
         null,
         1,
-        63,
+        64,
         null,
         null,
         1,
-        63,
-        63,
-        63,
-        63,
+        64,
+        64,
+        64,
+        64,
         null,
         null,
         1,
@@ -664,7 +664,7 @@
       "/Users/twilson.spqr/challenges/side-hussles/character-hive/spec/factories/character_classes.rb": [
         1,
         1,
-        65,
+        66,
         1,
         1,
         1,
@@ -696,7 +696,7 @@
       "/Users/twilson.spqr/challenges/side-hussles/character-hive/spec/factories/races.rb": [
         1,
         1,
-        65,
+        66,
         1,
         1,
         null,
@@ -705,8 +705,8 @@
       "/Users/twilson.spqr/challenges/side-hussles/character-hive/spec/factories/users.rb": [
         1,
         1,
-        74,
-        74,
+        75,
+        75,
         1,
         null,
         null
@@ -974,6 +974,7 @@
         null,
         1,
         2,
+        2,
         null,
         null,
         1,
@@ -983,6 +984,7 @@
         null
       ],
       "/Users/twilson.spqr/challenges/side-hussles/character-hive/app/models/details_panel.rb": [
+        1,
         1,
         1,
         1,
@@ -1155,6 +1157,6 @@
         null
       ]
     },
-    "timestamp": 1510719521
+    "timestamp": 1510782898
   }
 }
