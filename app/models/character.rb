@@ -2,6 +2,7 @@ class Character < ApplicationRecord
   belongs_to :user
   belongs_to :race
   has_many :levels
+  has_many :details_panels
 
   validates_presence_of :name
   validates_presence_of :character_class
