@@ -19,4 +19,8 @@ RSpec.describe DetailsPanel, type: :model do
     it { should have_valid(:alignment).when("Lawful Good", "Neutral Good", "Lawful Evil", "Chaotic Evil", "True Neutral") }
     it { should_not have_valid(:alignment).when("", nil, 7, "Good Guy", "Steve") }
   end
+
+  context "#associations" do
+    it { should belong_to :character }
+  end
 end
