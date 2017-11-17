@@ -1,0 +1,2 @@
+class CharacterSizeCategory < ApplicationRecord
+end
