@@ -16,6 +16,8 @@ RSpec.describe Character, type: :model do
     it { should_not have_valid(:level).when(nil, "", -5, 21, 40) }
   end
 
-  it { should belong_to :user }
-  it { should belong_to :race }
+  context "#associations" do
+    it { should belong_to :user }
+    it { should belong_to :race }
+  end
 end
