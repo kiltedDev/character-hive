@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe SizeCategory, type: :model do
 
     context "#creature_size" do
-      it { should have_valid(:creature_size).when("Fine", "Diminutive", "Tiny", "Small", "Medium", "Large" "Large (Tall)", "Huge", "Huge (Tall)", "Gargantuan", "Gargantuan (Tall)", "Colossal", "Colossal (Tall)", "Diminutive") }
+      it { should have_valid(:creature_size).when("Fine", "Diminutive", "Tiny", "Small", "Medium", "Large", "Large (Tall)", "Huge", "Huge (Tall)", "Gargantuan", "Gargantuan (Tall)", "Colossal", "Colossal (Tall)") }
       it { should_not have_valid(:creature_size).when(nil, "", "Biggish", "Not so big", "Greg") }
     end
 
