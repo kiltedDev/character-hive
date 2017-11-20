@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171116221055) do
+ActiveRecord::Schema.define(version: 20171117161554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,13 @@ ActiveRecord::Schema.define(version: 20171116221055) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_character_classes_on_name", unique: true
+  end
+
+  create_table "character_size_categories", force: :cascade do |t|
+    t.integer "character_id", null: false
+    t.integer "size_category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "characters", force: :cascade do |t|
@@ -68,6 +75,17 @@ ActiveRecord::Schema.define(version: 20171116221055) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_races_on_name", unique: true
+  end
+
+  create_table "size_categories", force: :cascade do |t|
+    t.string "creature_size", null: false
+    t.integer "size_modifier", null: false
+    t.integer "special_size_modifier", null: false
+    t.integer "fly_modifier", null: false
+    t.integer "stealth_modifier", null: false
+    t.integer "base_reach", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "stat_values", force: :cascade do |t|
