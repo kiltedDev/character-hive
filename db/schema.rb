@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171116221055) do
+ActiveRecord::Schema.define(version: 20171212013243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,48 @@ ActiveRecord::Schema.define(version: 20171116221055) do
     t.boolean "caster", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "acrobatics", default: false, null: false
+    t.boolean "bluff", default: false, null: false
+    t.boolean "climb", default: false, null: false
+    t.boolean "diplomacy", default: false, null: false
+    t.boolean "disable_device", default: false, null: false
+    t.boolean "disguise", default: false, null: false
+    t.boolean "escape_artist", default: false, null: false
+    t.boolean "fly", default: false, null: false
+    t.boolean "heal", default: false, null: false
+    t.boolean "intimidate", default: false, null: false
+    t.boolean "knowledge_arcana", default: false, null: false
+    t.boolean "knowledge_dungeoneering", default: false, null: false
+    t.boolean "knowledge_local", default: false, null: false
+    t.boolean "knowledge_nature", default: false, null: false
+    t.boolean "knowledge_planes", default: false, null: false
+    t.boolean "knowledge_religion", default: false, null: false
+    t.boolean "knowledge_history", default: false, null: false
+    t.boolean "knowledge_engineering", default: false, null: false
+    t.boolean "knowledge_geography", default: false, null: false
+    t.boolean "knowledge_nobility", default: false, null: false
+    t.boolean "perception", default: false, null: false
+    t.boolean "ride", default: false, null: false
+    t.boolean "sense_motive", default: false, null: false
+    t.boolean "spellcraft", default: false, null: false
+    t.boolean "stealth", default: false, null: false
+    t.boolean "survival", default: false, null: false
+    t.boolean "swim", default: false, null: false
+    t.boolean "use_magic_device", default: false, null: false
+    t.boolean "appraise", default: false, null: false
+    t.boolean "handle_animal", default: false, null: false
+    t.boolean "linguistics", default: false, null: false
+    t.boolean "sleight_of_hand", default: false, null: false
+    t.boolean "profession", default: false, null: false
+    t.boolean "craft", default: false, null: false
     t.index ["name"], name: "index_character_classes_on_name", unique: true
+  end
+
+  create_table "character_size_categories", force: :cascade do |t|
+    t.integer "character_id", null: false
+    t.integer "size_category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "characters", force: :cascade do |t|
@@ -68,6 +109,17 @@ ActiveRecord::Schema.define(version: 20171116221055) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_races_on_name", unique: true
+  end
+
+  create_table "size_categories", force: :cascade do |t|
+    t.string "creature_size", null: false
+    t.integer "size_modifier", null: false
+    t.integer "special_size_modifier", null: false
+    t.integer "fly_modifier", null: false
+    t.integer "stealth_modifier", null: false
+    t.integer "base_reach", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "stat_values", force: :cascade do |t|
