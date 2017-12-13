@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171212013243) do
+ActiveRecord::Schema.define(version: 20171213040628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attack_blocks", force: :cascade do |t|
+    t.string "attack_name", null: false
+    t.integer "misc_attack_bonus"
+    t.integer "misc_damage_bonus"
+    t.string "damage_daice", null: false
+    t.integer "crit_range", null: false
+    t.integer "crit_multiplier", null: false
+    t.string "attack_type", null: false
+    t.string "hit_and_damage_mods", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "character_classes", force: :cascade do |t|
     t.string "name", null: false
